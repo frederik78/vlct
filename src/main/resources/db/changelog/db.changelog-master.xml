@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <!-- Evolutions du schéma de la base. -->
+<!--   <include file="config/liquibase/structure.xml"/> -->
+  <!-- Chargement des tables de référence. -->
+<!--   <include file="config/liquibase/donnees.xml"/> -->
+  <!-- Exécution de scripts d'exploitation (correction de données, etc.). -->
+<!--   <include file="config/liquibase/exploitation.xml"/> -->
+</databaseChangeLog>
