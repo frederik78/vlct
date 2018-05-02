@@ -24,7 +24,6 @@
     },
     "include": [
         "src/main/webapp/",
-        "src/main/webapp/app/",
-        "src/test/javascript/"
+        "src/main/webapp/app/"
     ]
 }
