@@ -1,6 +1,7 @@
 package fr.frederic.evolucity.item.manager.rest;
 
 import java.net.URISyntaxException;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,9 +45,10 @@ public class ItemResource {
     }
 
     @GetMapping("/items")
-    public Page<Item> getAllItems(Pageable pageable) {
+//    public Page<Item> getAllItems(Pageable pageable) {
+  public List<Item> getAllItems(Pageable pageable) {
         log.debug("REST request to get a page of Demandes");
-        return this.itemRepository.findAll(pageable);
+        return this.itemRepository.findAll();
     }
 
     @GetMapping("/items/{id}")

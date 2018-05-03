@@ -3,15 +3,16 @@
     <h1>Welcome</h1>
     <h2>Angular & Bootstrap Demo</h2>
   </div>
-  <div class="panel panel-primary">
-    <div class="panel-heading">Status</div>
-    <div class="panel-body">
-      <ag-grid-angular #agGrid
-                       style="width: 500px; height: 500px;"
-                       class="ag-theme-fresh"
-                       [gridOptions]="gridOptions"
-      >
-      </ag-grid-angular>
-    </div>
-  </div>
+  <!--<div class="panel panel-primary">-->
+  <!--<div class="panel-heading">Status</div>-->
+  <!--<div class="panel-body text-center">-->
+  <!--<ag-grid-angular #agGrid-->
+  <!--style="width: 500px; height: 500px;"-->
+  <!--class="ag-theme-fresh"-->
+  <!--[gridOptions]="gridOptions"-->
+  <!--&gt;-->
+  <!--</ag-grid-angular>-->
+  <!--</div>-->
+  <!--</div>-->
+  <router-outlet></router-outlet>
 </div>
