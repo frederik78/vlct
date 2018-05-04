@@ -15,6 +15,7 @@ export class AgGridUtil {
             overlayLoadingTemplate: '<span class="ag-overlay-loading-center">Chargement en cours</span>',
             overlayNoRowsTemplate: '<span style="padding: 10px; border: 2px solid #444; background: lightgoldenrodyellow;">Aucun enregistrement</span>',
             rowData: null,
+            rowHeight: 30
         };
 
         gridOptions.localeText = {

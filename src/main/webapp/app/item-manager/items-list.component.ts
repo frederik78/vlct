@@ -3,6 +3,7 @@ import {GridOptions} from 'ag-grid';
 import {ItemsListService} from './items-list.service';
 import {AgGridUtil} from '../shared/ag-grid/ag-grid-utils';
 import {Router} from '@angular/router';
+import {SuppressButtonComponent} from '../shared/ag-grid/suppress-button.component';
 
 @Component({
   selector: 'items-list',
@@ -22,6 +23,18 @@ export class ItemsListComponent implements OnInit {
       {
         headerName: 'Quantity',
         field: 'quantity',
+      },
+      {
+        headerName: '',
+        field: 'id',
+        cellRendererFramework: SuppressButtonComponent,
+        cellRendererParams: {
+          dialog_box_title: 'Deleting an item'
+        },
+        colId: 'params',
+        width: 30,
+        suppressFilter: true,
+        suppressSorting: true
       }
     ];
   }
