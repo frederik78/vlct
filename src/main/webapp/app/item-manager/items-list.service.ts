@@ -16,4 +16,8 @@ export class ItemsListService {
     return this.http.get<Item[]>('/api/items');
   }
 
+  public getItem(id: number): Observable<Item> {
+    return this.http.get<Item>('/api/items/' + id, httpOptions);
+  }
+
 }

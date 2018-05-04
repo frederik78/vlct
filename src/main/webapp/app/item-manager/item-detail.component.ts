@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ItemsListService} from './items-list.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {formControlBinding} from '@angular/forms/src/directives/ng_model';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Item} from './model/item.interface';
 
 @Component({
   selector: 'item-detail',
@@ -10,10 +10,12 @@ import {Router} from '@angular/router';
 })
 export class ItemDetailComponent implements OnInit {
 
+  item: Item = <Item>{};
   parametersGroup: FormGroup;
 
   constructor(private itemsListService: ItemsListService,
               private router: Router,
+              private activatedRoute: ActivatedRoute,
               private fb: FormBuilder) {
     this.parametersGroup = this.fb.group(
       {
@@ -24,7 +26,12 @@ export class ItemDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    const id = +this.activatedRoute.snapshot.params.id;
+    this.itemsListService.getItem(id).subscribe(
+      (data) => {
+        this.item = data;
+      }
+    );
   }
 
   save() {
