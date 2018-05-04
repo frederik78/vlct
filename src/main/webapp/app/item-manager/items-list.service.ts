@@ -20,13 +20,18 @@ export class ItemsListService {
     return this.http.get<Item>('/api/items/' + id, httpOptions);
   }
 
-  public createItem(item: Item) {
+  public createItem(item: Item): Observable<Item>  {
     return this.http.post<Item>('/api/items/', item, httpOptions);
 
   }
 
-  public updateItem(item: Item) {
+  public updateItem(item: Item): Observable<Item>  {
     return this.http.put<Item>('/api/items/', item, httpOptions);
+
+  }
+
+  public deleteItem(id: number): Observable<Item>  {
+    return this.http.delete<Item>('/api/items/' + id, httpOptions);
 
   }
 

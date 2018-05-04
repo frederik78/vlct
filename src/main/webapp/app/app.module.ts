@@ -3,28 +3,33 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AgGridModule} from 'ag-grid-angular';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import {AppComponent} from './app.component';
 import {ItemsModule} from './item-manager/items-list.module';
 import {AppRoutingModule} from './app-routing.module';
-import {SuppressButtonComponent} from './shared/ag-grid/suppress-button.component';
+import {NgbdModalContent, SuppressButtonComponent} from './shared/ag-grid/suppress-button.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SuppressButtonComponent
+    SuppressButtonComponent,
+    NgbdModalContent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    NgbModule.forRoot(),
     AngularFontAwesomeModule,
+
     AgGridModule.withComponents([SuppressButtonComponent]),
     ItemsModule
   ],
   providers: [],
+  entryComponents:[NgbdModalContent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

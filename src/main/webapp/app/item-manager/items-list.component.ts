@@ -43,7 +43,6 @@ export class ItemsListComponent implements OnInit {
 
     this.itemsListService.getAllItems().subscribe(
       (data) => {
-        console.log(data);
         this.gridOptions.api.setRowData(data);
         this.gridOptions.api.sizeColumnsToFit();
       },

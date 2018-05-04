@@ -10,7 +10,7 @@ import {Item} from './model/item.interface';
 })
 export class ItemDetailComponent implements OnInit {
 
-  private item = <Item>{};
+  item = <Item>{};
   parametersGroup: FormGroup;
 
   constructor(private itemsListService: ItemsListService,
