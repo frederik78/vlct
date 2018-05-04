@@ -6,16 +6,20 @@
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-<!-- 	<changeSet id="1" author="minatchf" dbms="h2"> -->
-<!-- 		  <loadUpdateData catalogName="cat" -->
-<!--             encoding="UTF-8" -->
-<!--             file="config/liquibase/data/csv/items.csv" -->
-<!--             primaryKey="id" -->
-<!--             quotchar="" -->
-<!--             schemaName="public" -->
-<!--             separator="|" -->
-<!--             tableName="evo_items"> -->
-<!--     </loadUpdateData> -->
-<!-- 	</changeSet> -->
+	<changeSet id="1" author="minatchf" dbms="h2">
+		  <loadUpdateData catalogName="cat"
+            encoding="UTF-8"
+            file="config/liquibase/data/csv/items.csv"
+            primaryKey="id"
+            quotchar=""
+            schemaName="public"
+            separator="|"
+            tableName="evo_items">
+    </loadUpdateData>
+    <sql dbms="h2">
+    	CREATE SEQUENCE	IF NOT EXISTS hibernate_sequence;
+    	ALTER SEQUENCE hibernate_sequence RESTART WITH 200;
+    </sql>
+	</changeSet>
 
 </databaseChangeLog>
