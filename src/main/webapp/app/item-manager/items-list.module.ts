@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AgGridModule} from 'ag-grid-angular';
 import {ItemsListService} from './items-list.service';
 import {ItemsListComponent} from './items-list.component';
+import {ItemDetailComponent} from './item-detail.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import {ItemsListComponent} from './items-list.component';
     ReactiveFormsModule,
   ],
   declarations: [
-    ItemsListComponent
+    ItemsListComponent,
+    ItemDetailComponent
   ],
   providers: [
     ItemsListService

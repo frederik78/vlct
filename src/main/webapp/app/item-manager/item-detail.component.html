@@ -1,0 +1,21 @@
+<form [formGroup]="parametersGroup">
+  <div class="form-group row">
+    <label for="itemName" class="col-sm-2 col-form-label col-form-label-lg">Item name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-lg" id="itemName" formControlName="itemName">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="quantity" class="col-sm-2 col-form-label col-form-label-lg">Quantity</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control form-control-lg" id="quantity" formControlName="quantity">
+    </div>
+  </div>
+  <div class="form-group row">
+    <p>
+      <button type="button" class="btn btn-primary" (click)="save()" [disabled]="!parametersGroup.valid">Save</button>
+      <button type="button" class="btn btn-primary" (click)="cancel()">Cancel</button>
+    </p>
+  </div>
+
+</form>
