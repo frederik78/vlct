@@ -10,7 +10,7 @@ import {Item} from './model/item.interface';
 })
 export class ItemDetailComponent implements OnInit {
 
-  item: Item = <Item>{};
+  private item = <Item>{};
   parametersGroup: FormGroup;
 
   constructor(private itemsListService: ItemsListService,
@@ -27,15 +27,33 @@ export class ItemDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.activatedRoute.snapshot.params.id;
-    this.itemsListService.getItem(id).subscribe(
-      (data) => {
-        this.item = data;
-      }
-    );
+
+    if (id) {
+      this.itemsListService.getItem(id).subscribe(
+        (data) => {
+          this.item = data;
+        },
+        (error) => {
+          console.error('ERREUR', error);
+        }
+      );
+    }
   }
 
   save() {
-
+    if (this.item.id) {
+      this.itemsListService.updateItem(this.item).subscribe(
+        () => {
+          this.router.navigateByUrl('/items');
+        }
+      );
+    } else {
+      this.itemsListService.createItem(this.item).subscribe(
+        () => {
+          this.router.navigateByUrl('/items');
+        }
+      );
+    }
   }
 
   cancel() {

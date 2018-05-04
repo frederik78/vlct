@@ -5,26 +5,17 @@ import {ItemDetailComponent} from './item-manager/item-detail.component';
 
 export const itemsManagerRoutes: Routes = [
   {
-    path: '',
-    redirectTo: 'items',
-    pathMatch: 'full'
+    path: 'item/:id',
+    component: ItemDetailComponent,
   },
   {
     path: 'items',
     component: ItemsListComponent,
   },
   {
-    path: 'items/:id',
-    component: ItemDetailComponent,
+    path: '',
+    redirectTo: 'items',
+    pathMatch: 'full'
   },
-  // {
-  //     path: Constants.ROUTES.INCIDENT_PRODUIT.path,
-  //     loadChildren: () => IncidentProduitModule
-  // },
-  // {
-  //     path: Constants.ROUTES.COTE_FOURNISSEUR.path,
-  //     loadChildren: () => CoteFournisseurModule
-  // },
-  // {path: 'admin', loadChildren: './admin/admin.module#SgghAdminModule'},
-  {path: '**', redirectTo: '/'}
+  {path: '**', redirectTo: 'items'}
 ];

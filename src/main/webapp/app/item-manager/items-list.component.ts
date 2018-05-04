@@ -41,6 +41,10 @@ export class ItemsListComponent implements OnInit {
   }
 
   onRowDoubleClicked($event) {
-    this.router.navigateByUrl('items/' + $event.data.id);
+    this.router.navigateByUrl('item/' + $event.data.id);
+  }
+
+  createItem() {
+    this.router.navigateByUrl('item/');
   }
 }
