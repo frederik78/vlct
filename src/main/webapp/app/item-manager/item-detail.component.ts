@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ItemsListService} from './items-list.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {formControlBinding} from '@angular/forms/src/directives/ng_model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'item-detail',
@@ -12,11 +13,12 @@ export class ItemDetailComponent implements OnInit {
   parametersGroup: FormGroup;
 
   constructor(private itemsListService: ItemsListService,
+              private router: Router,
               private fb: FormBuilder) {
     this.parametersGroup = this.fb.group(
       {
         'itemName': ['', [Validators.required]],
-        'quantity': ['', [Validators.required]],
+        'quantity': ['', [Validators.required, Validators.min(0)]],
       }
     );
   }
@@ -30,6 +32,6 @@ export class ItemDetailComponent implements OnInit {
   }
 
   cancel() {
-
+    this.router.navigateByUrl('/items');
   }
 }
