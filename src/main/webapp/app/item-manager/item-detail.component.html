@@ -13,7 +13,7 @@
   </div>
   <div class="form-group row">
     <p>
-      <button type="button" class="btn btn-primary" (click)="save()" [disabled]="!parametersGroup.valid">Save</button>
+      <button type="button" [class]= "parametersGroup.valid? 'btn btn-primary' : 'btn'" (click)="save()" [disabled]="!parametersGroup.valid">Save</button>
       <button type="button" class="btn btn-primary" (click)="cancel()">Cancel</button>
     </p>
   </div>
