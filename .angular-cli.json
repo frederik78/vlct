@@ -5,31 +5,31 @@
   },
   "apps": [
     {
-      "root": "./",
+      "root": "src/main/webapp",
       "outDir": "target/www/app",
       "assets": [
         "assets",
         "favicon.ico"
       ],
-      "index": "src/main/webapp/index.html",
-      "main": "src/main/webapp/main.ts",
-      "polyfills": "src/main/webapp/polyfills.ts",
-      "test": "src/main/webapp/test.ts",
-      "tsconfig": "tsconfig.json",
-      "testTsconfig": "tsconfig.spec.json",
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "../../../tsconfig.json",
       "prefix": "app",
+      "mobile": false,
       "styles": [
-        "src/main/webapp/styles.css",
-        "node_modules/ag-grid/dist/styles/ag-grid.css",
-        "node_modules/ag-grid/dist/styles/ag-theme-balham.css",
-        "node_modules/ag-grid/dist/styles/ag-theme-fresh.css",
-        "node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "node_modules/font-awesome/css/font-awesome.css"
+        "styles.css",
+        "../../../node_modules/ag-grid/dist/styles/ag-grid.css",
+        "../../../node_modules/ag-grid/dist/styles/ag-theme-balham.css",
+        "../../../node_modules/ag-grid/dist/styles/ag-theme-fresh.css",
+        "../../../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../../../node_modules/font-awesome/css/font-awesome.css"
 
       ],
       "scripts": [
-        "node_modules/jquery/dist/jquery.min.js",
-        "node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "../../../node_modules/jquery/dist/jquery.min.js",
+        "../../../node_modules/bootstrap/dist/js/bootstrap.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

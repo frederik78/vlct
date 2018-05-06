@@ -1,4 +1,4 @@
-package fr.frederic.evolucity.item.manager;
+package fr.frederic.evolocity.item.manager;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

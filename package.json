@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "ng serve --proxy-config proxy.config.json --port=9070 --hot"
+    "start": "ng serve --proxy-config proxy.config.json --port=9070",
+    "prod": "ng build  --prod"
   },
   "private": true,
   "dependencies": {

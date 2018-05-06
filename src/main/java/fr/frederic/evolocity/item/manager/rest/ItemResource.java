@@ -1,4 +1,4 @@
-package fr.frederic.evolucity.item.manager.rest;
+package fr.frederic.evolocity.item.manager.rest;
 
 import java.net.URISyntaxException;
 import java.util.List;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.frederic.evolucity.item.manager.model.Item;
-import fr.frederic.evolucity.item.manager.repository.ItemRepository;
+import fr.frederic.evolocity.item.manager.model.Item;
+import fr.frederic.evolocity.item.manager.repository.ItemRepository;
 
 @RestController
 @RequestMapping("/api")

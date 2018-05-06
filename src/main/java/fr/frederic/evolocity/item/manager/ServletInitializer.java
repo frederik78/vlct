@@ -1,4 +1,4 @@
-package fr.frederic.evolucity.item.manager;
+package fr.frederic.evolocity.item.manager;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

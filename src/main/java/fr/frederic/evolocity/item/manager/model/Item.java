@@ -1,4 +1,4 @@
-package fr.frederic.evolucity.item.manager.model;
+package fr.frederic.evolocity.item.manager.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
