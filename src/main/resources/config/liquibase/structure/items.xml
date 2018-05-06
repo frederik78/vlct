@@ -8,7 +8,7 @@
 
 	<changeSet id="1" author="minatchf">
 		<createTable tableName="evo_items">
-			<column name="id" type="BIGINT">
+			<column name="id" type="BIGINT" autoIncrement="true">
 				<constraints primaryKey="true" nullable="false" />
 			</column>
 			<column name="pname" type="varchar(255)">
