@@ -81,6 +81,18 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.3.6</version>
+				<configuration>
+<!-- 					<dockerConfigFile>src/main/docker/Dockerfile</dockerConfigFile> -->
+					<repository>frederik78/vlct</repository>
+					<buildArgs>
+						<JAR_FILE>target/${project.build.finalName}.war</JAR_FILE>
+					</buildArgs>
+				</configuration>
+			</plugin>
 		</plugins>
 		<resources>
 			<resource>
