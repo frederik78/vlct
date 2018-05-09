@@ -1,0 +1,34 @@
+version: '3'
+services:
+    db:
+         image: mysql:5.7.22
+         volumes:
+           - ./db_data:/var/lib/mysql
+         restart: always
+         container_name: vlct_mysql
+         environment:
+           MYSQL_ROOT_PASSWORD: mypassword
+           MYSQL_DATABASE: vlct
+           MYSQL_USER: root
+           MYSQL_PASSWORD: mypassword
+         ports:
+            - 4407:3306
+    vlct-app:
+        depends_on:
+           - db
+        container_name: vlct
+        build: 
+          context: .
+          dockerfile: Dockerfile
+          args:
+            JAR_FILE: ${JAR_FILE}   
+        environment:
+            - DATABASE_HOST=db
+            - DATABASE_USER=root
+            - DATABASE_PASSWORD=mypassword
+            - DATABASE_NAME=vlct  
+            - DATABASE_PORT=4407
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+        ports:
+            - 9090:8080
+            

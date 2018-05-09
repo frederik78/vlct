@@ -19,6 +19,7 @@
 		<java.version>1.8</java.version>
 		<spring-boot.version>2.0.1.RELEASE</spring-boot.version>
 		<node.version>v8.9.4</node.version>
+		<JAR_FILE>${project.build.finalName}.war</JAR_FILE>
 	</properties>
 
 	<parent>
@@ -86,12 +87,51 @@
 				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>1.3.6</version>
 				<configuration>
-<!-- 					<dockerConfigFile>src/main/docker/Dockerfile</dockerConfigFile> -->
+					<contextDirectory>${project.build.directory}</contextDirectory>
 					<repository>frederik78/vlct</repository>
 					<buildArgs>
-						<JAR_FILE>target/${project.build.finalName}.war</JAR_FILE>
+						<JAR_FILE>${JAR_FILE}</JAR_FILE>
 					</buildArgs>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<!-- <version>${maven-resources-plugin.version}</version> -->
+				<executions>
+					<execution>
+						<id>docker-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/</outputDirectory>
+							<useDefaultDelimiters>false</useDefaultDelimiters>
+							<delimiters>
+								<delimiter>${*}</delimiter>
+								<delimiter>@</delimiter>
+							</delimiters>
+							<resources>
+								<resource>
+									<directory>src/main/docker/</directory>
+									<filtering>true</filtering>
+									<includes>
+										<include>docker-compose.yml</include>
+									</includes>
+								</resource>
+								<resource>
+									<directory>src/main/docker</directory>
+									<filtering>false</filtering>
+									<includes>
+										<include>**/*</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 		<resources>
