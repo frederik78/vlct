@@ -11,5 +11,7 @@ import fr.frederic.evolocity.item.manager.model.Item;
 public interface ItemRepository extends JpaRepository<Item, Long>{
 	
 	List<Item> findAllByOrderByName();
+	
+	List<Item> findByName(String name);
 
 }

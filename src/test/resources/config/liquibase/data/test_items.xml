@@ -6,10 +6,10 @@
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-	<changeSet id="1" author="minatchf" context="!test">
+	<changeSet id="1" author="minatchf" >
 		  <loadUpdateData catalogName="cat"
             encoding="UTF-8"
-            file="config/liquibase/data/csv/items.csv"
+            file="config/liquibase/data/csv/test_items.csv"
             primaryKey="id"
             quotchar=""
             schemaName="public"
