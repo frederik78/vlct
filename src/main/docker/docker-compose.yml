@@ -17,18 +17,19 @@ services:
         depends_on:
            - db
         container_name: vlct
-        build: 
+        build:
           context: .
           dockerfile: Dockerfile
           args:
-            JAR_FILE: ${JAR_FILE}   
+            JAR_FILE: ${JAR_FILE}
         environment:
             - DATABASE_HOST=db
             - DATABASE_USER=root
             - DATABASE_PASSWORD=mypassword
-            - DATABASE_NAME=vlct  
+            - DATABASE_NAME=vlct
             - DATABASE_PORT=4407
             - SPRING_PROFILES_ACTIVE=prod,swagger
         ports:
             - 9090:8080
-            
+        stdin_open: true
+        tty: true

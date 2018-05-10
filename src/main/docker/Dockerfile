@@ -3,4 +3,6 @@ VOLUME /tmp
 EXPOSE 8080
 ARG JAR_FILE
 COPY ${JAR_FILE} /app.war
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.war"]
+COPY wrapper.sh .
+RUN chmod +x wrapper.sh
+CMD sh wrapper.sh
