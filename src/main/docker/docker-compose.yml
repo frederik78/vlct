@@ -6,13 +6,15 @@ services:
            - ./db_data:/var/lib/mysql
          restart: always
          container_name: vlct_mysql
+         networks:
+            - spring-mysql
          environment:
            MYSQL_ROOT_PASSWORD: mypassword
            MYSQL_DATABASE: vlct
            MYSQL_USER: root
            MYSQL_PASSWORD: mypassword
          ports:
-            - 4407:3306
+            - 3306:3306
     vlct-app:
         depends_on:
            - db
@@ -22,14 +24,20 @@ services:
           dockerfile: Dockerfile
           args:
             JAR_FILE: ${JAR_FILE}
+        networks: 
+            - spring-mysql
         environment:
             - DATABASE_HOST=db
             - DATABASE_USER=root
             - DATABASE_PASSWORD=mypassword
             - DATABASE_NAME=vlct
-            - DATABASE_PORT=4407
+            - DATABASE_PORT=3306
             - SPRING_PROFILES_ACTIVE=prod,swagger
         ports:
             - 9090:8080
-        stdin_open: true
-        tty: true
+        #stdin_open: true
+        #tty: true
+networks:
+    spring-mysql:
+        driver: bridge
+        
