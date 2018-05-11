@@ -26,8 +26,8 @@ npm start
 
 Ce profile permet d'obtenir un war monolithique dans lequel les fichiers Angular sont "packagés"
 
-Afin de réaliser cette exécution, il est nécessaire de pouvoir accéder une base de données mysql.
-npm install
+Afin de réaliser cette exécution, il est nécessaire de pouvoir accéder une base de données **mysql**.  
+npm install  
 mvn clean install -DskipTests -Pprod  
 java -jar target/item.manager-0.0.1-SNAPSHOT.war  
 
@@ -37,9 +37,9 @@ java -jar target/item.manager-0.0.1-SNAPSHOT.war
 Il est possible d'exécuter le projet avec les deux profiles. 
 Pour celà, se placer à la racine du projet et exécuter la commande suivante :  
 
-npm install
-pour le profile prod : mvn clean install -Pprod -DskipTests  
-pour le profile dev : mvn clean install -DskipTests  
+npm install  
+pour le profile **prod** : mvn clean install -Pprod -DskipTests  
+pour le profile **dev** : mvn clean install -DskipTests  
 
 cd target  
 mvn docker-compose up
