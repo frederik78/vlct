@@ -1,14 +1,14 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
     <div class="form-group row">
-      <div class="col-sm-10">
+      <div style="margin: auto;">
         <button type="button" class="btn btn-primary" (click)="createItem()">Create item</button>
       </div>
     </div>
   </div>
   <div class="text-center">
     <ag-grid-angular #agGrid
-                     style="width: 550px; height: 550px; overflow: hidden"
+                     style="width: 550px; height: 550px; overflow: hidden; margin: auto;"
                      class="ag-theme-fresh"
                      [gridOptions]="gridOptions"
                      (rowDoubleClicked)="onRowDoubleClicked($event)"
