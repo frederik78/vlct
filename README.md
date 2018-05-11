@@ -11,7 +11,7 @@ Des scripts liquibase initialisent la base de données (qu'elle soit H2 ou MySQL
 
 En mode développement ouvrir deux console.  
 Se placer à racine du projet et exécuter :  
-
+npm install
 mvn clean install -DskipTests  
 java -jar target/item.manager-0.0.1-SNAPSHOT.war  
 
@@ -20,7 +20,14 @@ npm install
 npm start  
 
 ## Profile prod
+
+Ce profile permet d'obtenir un war monolithique dans lequel les fichiers Angular sont "packagés"
+
 Afin de réaliser cette exécution, il est nécessaire de pouvoir accéder une base de données mysql.
+npm install
+mvn clean install -DskipTests -Pprod  
+java -jar target/item.manager-0.0.1-SNAPSHOT.war  
+
 
 ## Exécution dans un container Docker
 Il est possible d'exécuter le projet avec les deux profiles. 
