@@ -30,7 +30,7 @@ Afin de réaliser cette exécution, il est nécessaire de pouvoir accéder une b
 son url par défaut est : **jdbc:mysql://192.168.99.101:3306/vlct** 
 
 Néanmoins, cette adresse est configurable en précisant le paramètre  
-**-Dspring.datasource.url=jdbc:mysql://<HOST>:<PORT>/vlct**
+**-Dspring.datasource.url=jdbc:mysql://${DB_HOST}:${DB_PORT}/vlct**
 
 npm install  
 mvn clean install -DskipTests -Pprod  
