@@ -13,7 +13,7 @@ En mode développement ouvrir deux console.
 Se placer à racine du projet et exécuter :  
 
 mvn clean install -DskipTests  
-java -jar target/vlct.war  
+java -jar target/item.manager-0.0.1-SNAPSHOT.war  
 
 dans la seconde console, en racine exécuter :   
 npm install  
@@ -23,8 +23,10 @@ npm start
 Afin de réaliser cette exécution, il est nécessaire de pouvoir accéder une base de données mysql.
 
 ## Exécution dans un container Docker
-Il est possible d'exécuter le projet avec les deux profiles.  
+Il est possible d'exécuter le projet avec les deux profiles. 
 Pour celà, se placer à la racine du projet et exécuter la commande suivante :  
+
+npm install
 pour le profile prod : mvn clean install -Pprod -DskipTests  
 pour le profile dev : mvn clean install -DskipTests  
 
