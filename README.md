@@ -1,27 +1,32 @@
 # Vlct
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+Ce projet repose sur SpringBoot et Angular 5. Il existe deux profiles  
+Dev et Prod.  
+Le profile dev s'exécute avec une base de données H2  
+Le profile prod, lui, avec une base de donnée MySQL  
 
-## Development server
+Des scripts liquibase initialisent la base de données (qu'elle soit H2 ou MySQL)  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Profile dev
 
-## Code scaffolding
+En mode développement ouvrir deux console.  
+Se placer à racine du projet et exécuter :  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+mvn clean install -DskipTests  
+java -jar target/vlct.war  
 
-## Build
+dans la seconde console, en racine exécuter :   
+npm install  
+npm start  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Profile prod
+Afin de réaliser cette exécution, il est nécessaire de pouvoir accéder une base de données mysql.
 
-## Running unit tests
+## Exécution dans un container Docker
+Il est possible d'exécuter le projet avec les deux profiles.  
+Pour celà, se placer à la racine du projet et exécuter la commande suivante :  
+pour le profile prod : mvn clean install -Pprod -DskipTests  
+pour le profile dev : mvn clean install -DskipTests  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+cd target  
+mvn docker-compose up
