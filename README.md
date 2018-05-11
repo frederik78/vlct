@@ -24,9 +24,14 @@ npm start
 
 ## Profile prod
 
-Ce profile permet d'obtenir un war monolithique dans lequel les fichiers Angular sont "packagés"
+Ce profile permet d'obtenir un war monolithique dans lequel les fichiers Angular sont "packagés".  
 
 Afin de réaliser cette exécution, il est nécessaire de pouvoir accéder une base de données **mysql**.  
+son url par défaut est : **jdbc:mysql://192.168.99.101:3306/vlct** 
+
+Néanmoins, cette adresse est configurable en précisant le paramètre  
+**-Dspring.datasource.url=jdbc:mysql://<HOST>:<PORT>/vlct**
+
 npm install  
 mvn clean install -DskipTests -Pprod  
 java -jar target/item.manager-0.0.1-SNAPSHOT.war  
