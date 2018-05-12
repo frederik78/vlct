@@ -10,7 +10,7 @@ Des scripts **Liquibase** initialisent la base de données (qu'elle soit H2 ou M
 
 ## Profile dev
 
-En mode **développement**, ouvrir deux console.  
+En mode **développement**, ouvrir deux consoles.  
 Se placer à la racine du projet et exécuter :  
 npm install
 mvn clean install -DskipTests  
@@ -54,16 +54,28 @@ npm install
 mvn clean install -DskipTests -Pprod  
 java -jar target/item.manager-0.0.1-SNAPSHOT.war  
 
-À l'aide d'un navigateur se connecter à l'adresse http://localhost:8080
+À l'aide d'un navigateur se connecter à l'adresse http://localhost:8080  
+
+## Création d'une image Docker
+Un plugin Maven permet de créer une image Docker de l'application.  
+
+npm install (si l'import des librairies Angular n'a pas été fait au préalable)   
+mvn clean install -Pprod -DskipTests
+mvn dockerfile:build  
+
+la commande :    
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;           docker images    
+permet de valider la création de l'images **vlct:latest**
 
 ## Exécution dans un container Docker
-Il est possible d'exécuter le projet avec les deux profiles. 
-Pour celà, se placer à la racine du projet et exécuter la commande suivante :  
+Il est possible d'exécuter le projet sur des container Docker.  
+Un container héberge la base de données MySQL et un autre l'application.  
 
-npm install  
-pour le profile **prod** : mvn clean install -Pprod -DskipTests  
-pour le profile **dev** : mvn clean install -DskipTests  
+Se placer à la racine du projet et exécuter la commande suivante :  
 
+npm install (si l'import des librairies angular n'a pas été fait au préalable)   
+mvn clean install -Pprod -DskipTests  
 cd target  
-mvn docker-compose up
+mvn docker-compose up -d  
 
+À l'aide d'un navigateur se connecter à l'adresse http://${DOCKER_HOST}:9090
