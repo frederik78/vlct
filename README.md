@@ -16,7 +16,7 @@ npm install
 mvn clean install -DskipTests  
 java -jar target/item.manager-0.0.1-SNAPSHOT.war  
 
-dans la seconde console, en racine exécuter :   
+dans la seconde console, en racine, exécuter :   
 npm install  
 npm start  
 
@@ -26,12 +26,12 @@ npm start
 ### Pré requis
 Ce profile permet d'obtenir un war monolithique dans lequel les fichiers Angular sont "packagés".  
 
-Afin de réaliser cette exécution, il est nécessaire de pouvoir accéder une base de données **mysql**.  
+Afin de réaliser cette exécution, il est nécessaire de pouvoir accéder à une base de données **mysql**.  
 l'url par défaut est : **jdbc:mysql://192.168.99.101:3306/vlct**,  
 l'utilisateur **root** et   
 le mot de passe **mypassword**
 
-Néanmoins, cette paramètres sont configurables en précisant  
+Néanmoins, ces paramètres sont configurables en précisant  
 
 **-Dspring-boot.run.arguments=--spring.datasource.url=jdbc:mysql://${DB_HOST}:${DB_PORT}/vlct, \  
 --spring.datasource.password=mypassword, \  
