@@ -44,7 +44,7 @@ il est également possible d'exécuter la base de données sur un conteneur Dock
  -p 3306:3306 \  
  -e MYSQL_ROOT_PASSWORD=mypassword \  
  -e MYSQL_DATABASE=vlct \  
- -e MYSQL_USER=root \  
+ -e MYSQL_USER=vlct \  
  -e MYSQL_PASSWORD=mypassword \  
  mysql:5.7.22**
 
