@@ -59,4 +59,8 @@ export class ItemDetailComponent implements OnInit {
   cancel() {
     this.router.navigateByUrl('/items');
   }
+
+  get quantity() { return this.parametersGroup.get('quantity'); }
+  get itemName() { return this.parametersGroup.get('itemName'); }
+
 }
